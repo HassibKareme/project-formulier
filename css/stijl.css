@@ -1,0 +1,12 @@
+#inputPostcode {
+    width: 100%;
+    height: 38px;
+}
+
+.maakBold {
+    font-weight: 600;
+}
+
+#subText {
+    font-size: 18px;
+}

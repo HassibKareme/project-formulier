@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/stijl.css">
+  <title>Formulier</title>
+</head>
+
+<body>
+  <form id="myForm" action="#" method="post">
+    <div class="container-fluid">
+      <div class="row m-5">
+        <div class="col-6 bg-light border rounded p-4">
+          <h1 class="maakBold">Registreer</h1>
+          <p id="subText">Meld je aan bij Anoroc Services, wij beschermen jouw software tegen malware!</p>
+          <!-- Voornaam en naam -->
+          <div class="container-fluid p-0">
+            <div class="row mb-3">
+              <div class="col-6">
+                <label for="First name" class="form-label">Voornaam</label>
+                <input id="fname" type="text" class="form-control" placeholder="Uw voornaam" aria-label="First name">
+              </div>
+              <div class="col-6">
+                <label for="Last name" class="form-label">Naam</label>
+                <input id="lname" type="text" class="form-control" placeholder="Uw naam" aria-label="Last name">
+              </div>
+            </div>
+            <!-- Gebruikersnaam en email -->
+            <div class="row mb-3">
+              <div class="col-6">
+                <label for="Username" class="form-label">Gebruikersnaam</label>
+                <div class="input-group"><span class="input-group-text" id="basic-addon1">@</span>
+                  <input id="username" type="text" class="form-control" placeholder="u911236" aria-label="Username"
+                    aria-describedby="basic-addon1">
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="inputEmail" class="form-label">E-mailadres</label>
+                <input type="email" class="form-control" id="inputEmail">
+              </div>
+            </div>
+            <!-- Wachtwoord -->
+            <div class="row mb-3">
+              <div class="col-6">
+                <label for="inputPassword" class="col-form-label">Wachtwoord</label>
+                <input type="password" class="form-control" id="inputPassword">
+              </div>
+              <div class="col-6">
+                <label for="inputPassword2" class="col-form-label">Herhaal wachtwoord</label>
+                <input type="password" class="form-control" id="inputPassword2">
+              </div>
+            </div>
+            <!-- Adres -->
+            <div class="row mb-3">
+              <div class="col-12">
+                <label for="inputAddress" class="form-label">Adres</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Uw adres en huisnummer">
+              </div>
+            </div>
+            <!-- Land, provincie en postcode -->
+            <div class="row mb-3">
+              <div class="col-5">
+                <label for="inputLand" class="form-label">Land</label>
+                <select id="inputLand" class="form-select">
+                  <option value="" selected>Kies een land</option>
+                  <option value="Belgie">Belgie</option>
+                  <option value="Nederland">Nederland</option>
+                  <option value="Canada">Canada</option>
+                </select>
+              </div>
+              <div class="col-4">
+                <label for="inputProvincie" class="form-label">Provincie</label>
+                <select id="inputProvincie" class="form-select">
+                  <option value="" selected>Kies een provincie</option>
+                </select>
+              </div>
+              <div class="col-3 p-0">
+                <label for="inputPostcode" class="form-label">Postcode</label>
+                <input type="number" name="inputPostcode" id="inputPostcode" class="p-1 border rounded">
+              </div>
+            </div>
+            <!-- Checks en Radios -->
+            <div class="row mb-3">
+              <!-- Horizontal line -->
+              <div class="col-12">
+                <hr>
+              </div>
+              <div class="container-fluid">
+                <div class="row m-1">
+                  <div class="col-6">
+                    <h4 class="maakBold">Hou me op de hoogte</h4>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckNieuwsbrief">
+                      <label class="form-check-label" for="flexCheckNieuwsbrief">
+                        Inschrijven voor onze nieuwsbrief.
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="geaccepteerd" id="flexCheckVoorwaarden">
+                      <label class="form-check-label" for="flexCheckVoorwaarden">
+                        Ik ga akkoord met de algemene voorwaarden.
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="maakBold">Betaling</h4>
+                    <div class="form-check">
+                      <input class="radiobuttons form-check-input" type="radio" name="flexRadioDefault"
+                        id="flexRadioBanking" checked value="Banking app">
+                      <label class="form-check-label" for="flexRadioBanking">
+                        Banking app
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="radiobuttons form-check-input" type="radio" name="flexRadioDefault"
+                        id="flexRadioOverschrijving" value="Overschrijving">
+                      <label class="form-check-label" for="flexRadioOverschrijving">
+                        Overschrijving
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="radiobuttons form-check-input" type="radio" name="flexRadioDefault"
+                        id="flexRadioVisa" value="Visa">
+                      <label class="form-check-label" for="flexRadioVisa">
+                        Visa card
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="radiobuttons form-check-input" type="radio" name="flexRadioDefault"
+                        id="flexRadioPaypal" value="Paypal">
+                      <label class="form-check-label" for="flexRadioPaypal">
+                        Paypal
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Horizontal line -->
+              <div class="col-12 mb-3">
+                <hr>
+              </div>
+              <div class="col-12">
+                <button id="myBtn" type="submit" class="btn btn-primary w-100">Wave your magic wand</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Errors -->
+        <div class="col-6 p-4">
+          <!-- Foutmelding -->
+          <div id="foutmeldingen" class="alert alert-danger" role="alert">
+
+          </div>
+          <!-- success -->
+          <div class="alert alert-success" role="alert">
+
+          </div>
+          <!-- info -->
+          <div id="betalingswijze" class="alert alert-info" role="alert">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </form>
+
+  <!-- Scripts -->
+
+  <script>
+    let provinciesBelgie = ['Antwerpen', 'Henegouwen', 'Limburg', 'Luik', 'Luxemburg', 'Namen', 'Oost-Vlaanderen',
+      'Vlaams-Brabant', 'Waals-Brabant', 'West-Vlaanderen'
+    ];
+    let provinciesNederland = ['Groningen', 'Friesland', 'Drenthe', 'Overrijsel', 'Flevoland'];
+    let provinciesCanada = ['Alberta', 'Manitoba', 'Brits-Columbia', 'Ontario'];
+    let inputLand = document.querySelector('#inputLand');
+    let inputProvincie = document.querySelector('#inputProvincie')
+
+    let lijstFoutmeldingen = document.querySelector('#foutmeldingen');
+    let betalingswijze = document.querySelector('#betalingswijze');
+    let mijnButton = document.querySelector('#myBtn');
+    let errors = [];
+
+    let voornaam = document.querySelector('#fname');
+    let familienaam = document.querySelector('#lname');
+    let naamGebruiker = document.querySelector('#username');
+    let adresGebruiker = document.querySelector('#inputAddress');
+    let mailadres = document.querySelector('#inputEmail');
+    let postcode = document.querySelector('#inputPostcode');
+    let voorwaarden = document.querySelector('#flexCheckVoorwaarden');
+    let wachtwoord = document.querySelector('#inputPassword');
+    let wachtwoordHerhaling = document.querySelector('#inputPassword2');
+
+    // Algemene voorwaarden
+
+    function controleerVoorwaarden() {
+      let melding = 'Je moet de algemene voorwaarden accepteren';
+      if (!voorwaarden.checked) {
+        if (!errors.includes(melding)) {
+          errors.push(melding);
+        }
+      } else {
+        let index = errors.indexOf(melding);
+        if (index !== -1) {
+          errors.splice(index, 1);
+        }
+      }
+    }
+
+    // Aanpassing dropdown
+
+    inputLand.addEventListener('change', updateSelect, false);
+
+    function updateSelect() {
+      inputProvincie.innerHTML = '<option value="" selected>Kies een provincie</option>'
+      if (inputLand.value == 'Belgie') {
+        provinciesBelgie.forEach(element => {
+          inputProvincie.innerHTML += `<option value="${element}">${element}</option>`;
+        });
+      } else if (inputLand.value == 'Nederland') {
+        provinciesNederland.forEach(element => {
+          inputProvincie.innerHTML += `<option value="${element}">${element}</option>`;
+        });
+      } else if (inputLand.value == 'Canada') {
+        provinciesCanada.forEach(element => {
+          inputProvincie.innerHTML += `<option value="${element}">${element}</option>`;
+        });
+      }
+    }
+
+    function refresh() {
+      if (errors.length == 0) {
+        lijstFoutmeldingen.innerHTML = ''
+      } else {
+        lijstFoutmeldingen.innerHTML = '<h4>Foutmeldingen</h4>';
+
+        errors.forEach(element => {
+          lijstFoutmeldingen.innerHTML += element + '<br />';
+        });
+      }
+    }
+
+    function checkEmptyField(veld, melding) {
+      if (veld.value == '') {
+        if (!errors.includes(melding)) {
+          errors.push(melding);
+        }
+      } else {
+        let index = errors.indexOf(melding);
+        if (index !== -1) {
+          errors.splice(index, 1);
+        }
+      }
+    }
+
+    // Mail
+
+    function validateEmail(email) {
+      let melding = 'E-mailadres is niet correct.';
+
+      let stringEmail = email;
+
+      // let regex = /^(?!\.|-)[a-zA-Z0-9_.-]+/;
+      // let regex = /^(?!\.|-)[a-zA-Z0-9_.-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+      // https://www.tutorialspoint.com/checking-for-valid-email-address-using-regular-expressions-in-java
+
+      let regex = /^(?!\.|-)[a-zA-Z0-9_.-]+@(?=[a-zA-Z0-9])[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+      let geldig = regex.test(email);
+
+      if (geldig == false) {
+        if (!errors.includes(melding)) {
+          errors.push(melding);
+        }
+        return false;
+      } else {
+        let index = errors.indexOf(melding);
+        if (index !== -1) {
+          errors.splice(index, 1);
+        }
+        return true;
+      }
+    }
+
+    // Wachtwoord
+
+    function validatePasswordLengte(wachtwoord1, wachtwoord2) {
+      let password = wachtwoord1.value;
+      let passwordHerhaling = wachtwoord2.value;
+      // https://stackoverflow.com/questions/3166738/minimum-6-characters-regex-expression
+      let regex = /^.{7,}$/;
+      let geldig = regex.test(password);
+      let melding = 'Wachtwoord is te kort.';
+      let index1 = errors.indexOf('Het veld wachtwoord is vereist.');
+      let index2 = errors.indexOf('Het veld herhaal wachtwoord is vereist.');
+
+      let index = errors.indexOf(melding);
+      if (index !== -1) {
+        errors.splice(index, 1);
+      }
+
+      if (index1 == -1 && index2 == -1) {
+        if (geldig == false) {
+          if (!errors.includes(melding)) {
+            errors.push(melding);
+          }
+        } else {
+          index = errors.indexOf(melding);
+          if (index !== -1) {
+            errors.splice(index, 1);
+          }
+        }
+      }
+    }
+
+    function validatePasswordControle(wachtwoord1, wachtwoord2) {
+      let melding = 'Je wachtwoorden komen niet overeen.';
+      let index1 = errors.indexOf('Het veld wachtwoord is vereist.');
+      let index2 = errors.indexOf('Het veld herhaal wachtwoord is vereist.');
+      let index3 = errors.indexOf('Wachtwoord is te kort.');
+      let geldig;
+
+      let index = errors.indexOf(melding);
+      if (index !== -1) {
+        errors.splice(index, 1);
+      }
+
+      if (index1 == -1 && index2 == -1 && index3 == -1) {
+        if (wachtwoord1.value != wachtwoord2.value) {
+          geldig = false;
+        }
+
+        if (geldig == false) {
+          if (!errors.includes(melding)) {
+            errors.push(melding);
+          }
+        } else {
+          index = errors.indexOf(melding);
+          if (index !== -1) {
+            errors.splice(index, 1);
+          }
+        }
+      }
+    }
+
+    // Postcode
+
+    function checkPC(veld) {
+      let meldingRange = 'De waarde van postcode moet tussen 1000 en 9999 liggen.';
+      if (veld < 1000 || veld > 9999) {
+        if (!errors.includes(meldingRange)) {
+          errors.push(meldingRange);
+        }
+      } else {
+        let index = errors.indexOf(meldingRange);
+        if (index !== -1) {
+          errors.splice(index, 1);
+        }
+      }
+    }
+
+    function validatePayment(veld) {
+      let radiobuttons;
+      let keuze;
+      if (errors.length == 0) {
+        radiobuttons = document.querySelectorAll('.radiobuttons');
+        radiobuttons.forEach(element => {
+          if (element.checked) {
+            keuze = element.value;
+          }
+          betalingswijze.innerHTML = `Je betalingswijze is ${keuze}`;
+        });
+      }
+    }
+
+    // Validatie
+
+    let validateForm = () => {
+      checkEmptyField(voornaam, 'Het veld voornaam is vereist.');
+      checkEmptyField(familienaam, 'Het veld naam is vereist.');
+      checkEmptyField(naamGebruiker, 'Het veld gebruikersnaam is vereist.');
+      checkEmptyField(adresGebruiker, 'Adres is vereist.');
+      checkEmptyField(inputLand, 'Land is vereist.');
+      checkEmptyField(inputProvincie, 'Provincie is vereist.');
+      checkEmptyField(inputEmail, 'Het veld email is vereist.');
+      checkEmptyField(postcode, 'Postcode is vereist.');
+      checkEmptyField(wachtwoord, 'Het veld wachtwoord is vereist.');
+      checkEmptyField(wachtwoordHerhaling, 'Het veld herhaal wachtwoord is vereist.');
+      validatePasswordLengte(wachtwoord, wachtwoordHerhaling);
+      validatePasswordControle(wachtwoord, wachtwoordHerhaling);
+      checkPC(postcode.value);
+      validateEmail(mailadres.value);
+      controleerVoorwaarden();
+      validatePayment();
+      refresh();
+    }
+
+    mijnButton.addEventListener('click', validateForm, false);
+  </script>
+
+  <script>
+    // https://stackoverflow.com/questions/19454310/stop-form-refreshing-page-on-submit
+    var form = document.getElementById("myForm");
+
+    function handleForm(event) {
+      event.preventDefault();
+    }
+    form.addEventListener('submit', handleForm)
+  </script>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
