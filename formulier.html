@@ -7,6 +7,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/stijl.css">
   <title>Formulier</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png">
 </head>
 
 <body>
@@ -151,15 +152,11 @@
         <!-- Errors -->
         <div class="col-6 p-4">
           <!-- Foutmelding -->
-          <div id="foutmeldingen" class="alert alert-danger" role="alert">
-
-          </div>
-          <!-- success -->
-          <div class="alert alert-success" role="alert">
-
+          <div id="foutmeldingen">
+            
           </div>
           <!-- info -->
-          <div id="betalingswijze" class="alert alert-info" role="alert">
+          <div id="betalingswijze">
 
           </div>
         </div>
@@ -233,13 +230,17 @@
 
     function refresh() {
       if (errors.length == 0) {
-        lijstFoutmeldingen.innerHTML = ''
+        lijstFoutmeldingen.innerHTML = '<div class="alert alert-success" role="alert"><h4>Goed gedaan!</h4><p>Aww yeah, je werd geregistreerd.</p></div>';
       } else {
-        lijstFoutmeldingen.innerHTML = '<h4>Foutmeldingen</h4>';
+        let alleMeldingen = '<div class="alert alert-danger" role="alert"><h4>Yikes, errors!</h4><br />';
 
         errors.forEach(element => {
-          lijstFoutmeldingen.innerHTML += element + '<br />';
+          alleMeldingen += element + '<br />';
         });
+
+        alleMeldingen += '</div>'
+
+        lijstFoutmeldingen.innerHTML = alleMeldingen; 
       }
     }
 
@@ -260,11 +261,7 @@
 
     function validateEmail(email) {
       let melding = 'E-mailadres is niet correct.';
-
       let stringEmail = email;
-
-      // let regex = /^(?!\.|-)[a-zA-Z0-9_.-]+/;
-      // let regex = /^(?!\.|-)[a-zA-Z0-9_.-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
       // https://www.tutorialspoint.com/checking-for-valid-email-address-using-regular-expressions-in-java
 
@@ -372,8 +369,21 @@
           if (element.checked) {
             keuze = element.value;
           }
-          betalingswijze.innerHTML = `Je betalingswijze is ${keuze}`;
+          betalingswijze.innerHTML = `<div class="alert alert-info" role="alert">Je betalingswijze is ${keuze}</div>`;
         });
+      }
+      else {
+        betalingswijze.innerHTML = '';
+      }
+    }
+
+    // Disable button
+
+    let disableButton = () => {
+      if (errors.length == 0) {
+        mijnButton.classList.remove('btn-primary');
+        mijnButton.classList.add('disabled');
+        mijnButton.classList.add('btn-secondary');
       }
     }
 
@@ -397,6 +407,7 @@
       controleerVoorwaarden();
       validatePayment();
       refresh();
+      disableButton();
     }
 
     mijnButton.addEventListener('click', validateForm, false);
