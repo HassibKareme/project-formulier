@@ -153,7 +153,7 @@
         <div class="col-12 col-lg-6 p-4">
           <!-- Foutmelding -->
           <div id="foutmeldingen">
-            
+
           </div>
           <!-- info -->
           <div id="betalingswijze">
@@ -190,6 +190,7 @@
     let voorwaarden = document.querySelector('#flexCheckVoorwaarden');
     let wachtwoord = document.querySelector('#inputPassword');
     let wachtwoordHerhaling = document.querySelector('#inputPassword2');
+    let radiobuttons = document.querySelectorAll('.radiobuttons');
 
     // Algemene voorwaarden
 
@@ -232,7 +233,8 @@
 
     function refresh() {
       if (errors.length == 0) {
-        lijstFoutmeldingen.innerHTML = '<div class="alert alert-success" role="alert"><h4>Goed gedaan!</h4><p>Aww yeah, je werd geregistreerd.</p></div>';
+        lijstFoutmeldingen.innerHTML =
+          '<div class="alert alert-success" role="alert"><h4>Goed gedaan!</h4><p>Aww yeah, je werd geregistreerd.</p></div>';
       } else {
         let alleMeldingen = '<div class="alert alert-danger" role="alert"><h4>Yikes, errors!</h4><br />';
 
@@ -242,7 +244,7 @@
 
         alleMeldingen += '</div>'
 
-        lijstFoutmeldingen.innerHTML = alleMeldingen; 
+        lijstFoutmeldingen.innerHTML = alleMeldingen;
       }
     }
 
@@ -368,18 +370,16 @@
     // Betaling
 
     function validatePayment(veld) {
-      let radiobuttons;
       let keuze;
       if (errors.length == 0) {
-        radiobuttons = document.querySelectorAll('.radiobuttons');
         radiobuttons.forEach(element => {
           if (element.checked) {
             keuze = element.value;
           }
-          betalingswijze.innerHTML = `<div class="alert alert-info" role="alert">Je betalingswijze is ${keuze}</div>`;
+          betalingswijze.innerHTML =
+            `<div class="alert alert-info" role="alert">Je betalingswijze is ${keuze}</div>`;
         });
-      }
-      else {
+      } else {
         betalingswijze.innerHTML = '';
       }
     }
@@ -424,7 +424,7 @@
       checkPC(postcode);
       validateEmail(mailadres.value);
       controleerVoorwaarden();
-      validatePayment();
+      validatePayment(radiobuttons);
       refresh();
       leegmakenVelden();
     }
