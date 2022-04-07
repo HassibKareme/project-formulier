@@ -14,7 +14,7 @@
   <form id="myForm" action="#" method="post">
     <div class="container-fluid">
       <div class="row m-5">
-        <div class="col-6 bg-light border rounded p-4">
+        <div class="col-12 col-lg-6 bg-light border rounded p-4">
           <h1 class="maakBold">Registreer</h1>
           <p id="subText">Meld je aan bij Anoroc Services, wij beschermen jouw software tegen malware!</p>
           <!-- Voornaam en naam -->
@@ -150,7 +150,7 @@
           </div>
         </div>
         <!-- Errors -->
-        <div class="col-6 p-4">
+        <div class="col-12 col-lg-6 p-4">
           <!-- Foutmelding -->
           <div id="foutmeldingen">
             
@@ -377,13 +377,25 @@
       }
     }
 
-    // Disable button
+    // Disable button & Leegmaken velden
 
-    let disableButton = () => {
+    let leegmakenVelden = () => {
       if (errors.length == 0) {
         mijnButton.classList.remove('btn-primary');
         mijnButton.classList.add('disabled');
         mijnButton.classList.add('btn-secondary');
+
+        voornaam.value = '';
+        familienaam.value = '';
+        naamGebruiker.value = '';
+        adresGebruiker.value = '';
+        mailadres.value = '';
+        wachtwoord.value = '';
+        wachtwoordHerhaling.value = '';
+        postcode.value = '';
+        inputLand.value = '';
+        inputProvincie.value = '';
+        voorwaarden.checked = false;
       }
     }
 
@@ -407,7 +419,7 @@
       controleerVoorwaarden();
       validatePayment();
       refresh();
-      disableButton();
+      leegmakenVelden();
     }
 
     mijnButton.addEventListener('click', validateForm, false);
