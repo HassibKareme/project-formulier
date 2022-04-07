@@ -351,8 +351,9 @@
     // Postcode
 
     function checkPC(veld) {
+      let postcodeInvoer = veld.value;
       let meldingRange = 'De waarde van postcode moet tussen 1000 en 9999 liggen.';
-      if ((veld < 1000 || veld > 9999) && !errors.includes('Postcode is vereist.')) {
+      if ((postcodeInvoer < 1000 || postcodeInvoer > 9999) && !errors.includes('Postcode is vereist.')) {
         if (!errors.includes(meldingRange)) {
           errors.push(meldingRange);
         }
@@ -420,7 +421,7 @@
       checkEmptyField(wachtwoordHerhaling, 'Het veld herhaal wachtwoord is vereist.');
       validatePasswordLengte(wachtwoord, wachtwoordHerhaling);
       validatePasswordControle(wachtwoord, wachtwoordHerhaling);
-      checkPC(postcode.value);
+      checkPC(postcode);
       validateEmail(mailadres.value);
       controleerVoorwaarden();
       validatePayment();
