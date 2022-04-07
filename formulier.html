@@ -236,7 +236,7 @@
         lijstFoutmeldingen.innerHTML =
           '<div class="alert alert-success" role="alert"><h4>Goed gedaan!</h4><p>Aww yeah, je werd geregistreerd.</p></div>';
       } else {
-        let alleMeldingen = '<div class="alert alert-danger" role="alert"><h4>Yikes, errors!</h4><br />';
+        let alleMeldingen = '<div class="alert alert-danger" role="alert"><h4>Yikes, errors!</h4>';
 
         errors.forEach(element => {
           alleMeldingen += element + '<br />';
@@ -377,7 +377,7 @@
             keuze = element.value;
           }
           betalingswijze.innerHTML =
-            `<div class="alert alert-info" role="alert">Je betalingswijze is ${keuze}</div>`;
+            `<div class="alert alert-info" role="alert"><h4>Betalingswijze</h4>Je betalingswijze is ${keuze}</div>`;
         });
       } else {
         betalingswijze.innerHTML = '';
