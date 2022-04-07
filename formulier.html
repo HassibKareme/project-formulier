@@ -228,6 +228,8 @@
       }
     }
 
+    // Toevoegen errors
+
     function refresh() {
       if (errors.length == 0) {
         lijstFoutmeldingen.innerHTML = '<div class="alert alert-success" role="alert"><h4>Goed gedaan!</h4><p>Aww yeah, je werd geregistreerd.</p></div>';
@@ -243,6 +245,8 @@
         lijstFoutmeldingen.innerHTML = alleMeldingen; 
       }
     }
+
+    //Lege velden nakijken
 
     function checkEmptyField(veld, melding) {
       if (veld.value == '') {
@@ -269,7 +273,7 @@
 
       let geldig = regex.test(email);
 
-      if (geldig == false) {
+      if (geldig == false && !errors.includes('Het veld email is vereist.')) {
         if (!errors.includes(melding)) {
           errors.push(melding);
         }
@@ -348,7 +352,7 @@
 
     function checkPC(veld) {
       let meldingRange = 'De waarde van postcode moet tussen 1000 en 9999 liggen.';
-      if (veld < 1000 || veld > 9999) {
+      if ((veld < 1000 || veld > 9999) && !errors.includes('Postcode is vereist.')) {
         if (!errors.includes(meldingRange)) {
           errors.push(meldingRange);
         }
@@ -359,6 +363,8 @@
         }
       }
     }
+
+    // Betaling
 
     function validatePayment(veld) {
       let radiobuttons;
